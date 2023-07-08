@@ -2,6 +2,7 @@ package com.example.monqez.ui
 
 import android.app.Activity.RESULT_CANCELED
 import android.app.Activity.RESULT_OK
+import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -15,6 +16,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
@@ -62,10 +64,15 @@ class ScanFragment : Fragment() {
         }
         binding.find.setOnClickListener {
             Log.i("Glitch 1", "glitch1")
+            val mProgressDialog = ProgressDialog(requireContext(), R.style.MyAlertDialogStyle)
+            mProgressDialog.setTitle("Finding The patient")
+            mProgressDialog.setMessage("Loading")
+            mProgressDialog.show()
             userReq =UserReq(
                 data = convertBitmapToBase64(bp)
             )
             getUser(userReq)
+            mProgressDialog.dismiss()
         }
 
 
@@ -85,6 +92,7 @@ class ScanFragment : Fragment() {
                 if (resultCode == RESULT_OK) {
                     bp = data?.extras?.get("data") as Bitmap
                     binding.imageView.setImageBitmap(bp)
+                    binding.find.isEnabled = true
                 } else if (resultCode == RESULT_CANCELED) {
                     Toast.makeText(requireContext(), "Cancelled", Toast.LENGTH_LONG).show()
                 }

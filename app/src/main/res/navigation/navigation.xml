@@ -50,4 +50,9 @@
             app:destination="@id/welcomeFragment"
             app:enterAnim="@android:anim/fade_in" />
     </fragment>
+    <fragment
+        android:id="@+id/addUserFragment"
+        android:name="com.example.monqez.ui.AddUserFragment"
+        android:label="fragment_add_user"
+        tools:layout="@layout/fragment_add_user" />
 </navigation>

@@ -17,11 +17,13 @@
             android:id="@+id/imageView"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
             app:layout_constraintBottom_toTopOf="@+id/find"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/glitch1" />
+            app:srcCompat="@drawable/ic_auto_layout_vertical" />
 
         <Button
             android:id="@+id/find"
@@ -30,8 +32,10 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="16dp"
             android:text="find"
+            android:enabled="false"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+             />
 
         <Button
             android:id="@+id/scan"
@@ -39,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Button"
+            android:text="Scan"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
