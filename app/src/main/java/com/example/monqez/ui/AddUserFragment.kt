@@ -62,19 +62,19 @@ class AddUserFragment : Fragment() {
             isValidate = false
         }
         if (binding.bloodType.text!!.isEmpty()) {
-            binding.regName.error = "Please enter your blood type"
+            binding.regBloodType.error = "Please enter your blood type"
             isValidate = false
         }
         if (binding.email.text!!.isEmpty()) {
-            binding.regName.error = "Please enter your email"
+            binding.regEmail.error = "Please enter your email"
             isValidate = false
         }
         if (binding.phone.text!!.isEmpty()) {
-            binding.regName.error = "Please enter your phone"
+            binding.regPhoneNo.error = "Please enter your phone"
             isValidate = false
         }
         if (binding.password.text!!.isEmpty()) {
-            binding.regName.error = "Please enter your password"
+            binding.regPassword.error = "Please enter your password"
             isValidate = false
         }
         return isValidate
